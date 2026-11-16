@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Benchmarking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>🧠 ML Model</h2>
+        <p class="brand">Benchmarking</p>
+
+        <nav>
+            <a href="#home" class="active">⌂ Home</a>
+            <a href="#results">▥ Results</a>
+            <a href="/docs" target="_blank">‹/› API Docs</a>
+            <a href="#about">ⓘ About</a>
+        </nav>
+
+        <p class="tagline">Measure. Analyze. Improve.</p>
+    </aside>
+
+    <main class="main-content" id="home">
+
+        <header>
+            <h1>ML Model Prediction</h1>
+            <p>Enter the 30 features to get a prediction from our trained model.</p>
+        </header>
+
+        <section class="card">
+            <h2>✨ Prediction Input</h2>
+
+            <label for="features">Features (30 values):</label>
+
+            <textarea id="features">17.99, 10.38, 122.8, 1001.0, 0.1184, 0.2776, 0.3001, 0.1471, 0.2419, 0.07871, 1.095, 0.9053, 8.589, 153.4, 0.006399, 0.04904, 0.05373, 0.01587, 0.03003, 0.006193, 25.38, 17.33, 184.6, 2019.0, 0.1622, 0.6656, 0.7119, 0.2654, 0.4601, 0.1189</textarea>
+
+            <button id="predictBtn" onclick="getPrediction()">
+                ⚡ Get Prediction
+            </button>
+
+            <div id="predictionResult" class="result hidden"></div>
+        </section>
+
+        <section class="metrics">
+            <div class="metric-card">
+                <h3>Average Latency</h3>
+                <p id="latency">-- ms</p>
+            </div>
+
+            <div class="metric-card">
+                <h3>Throughput</h3>
+                <p id="throughput">-- req/sec</p>
+            </div>
+
+            <div class="metric-card">
+                <h3>Success Rate</h3>
+                <p id="successRate">-- %</p>
+            </div>
+        </section>
+
+        <section class="card" id="results">
+            <h2>📊 Performance Results</h2>
+            <p id="statusMessage">Run the benchmark script to display your results here.</p>
+
+            <div class="charts">
+                <div class="chart-box">
+                    <h3>Latency vs Number of Requests</h3>
+                    <canvas id="latencyChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <h3>Throughput vs Number of Requests</h3>
+                    <canvas id="throughputChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <h3>Response Time Distribution</h3>
+                    <canvas id="distributionChart"></canvas>
+                </div>
+            </div>
+
+            <button class="secondary-btn" onclick="loadResults()">
+                Refresh Benchmark Results
+            </button>
+        </section>
+
+        <section class="card" id="about">
+            <h2>About This Project</h2>
+            <p>
+                This project measures the performance of a Machine Learning
+                model using a benchmarking application. It analyzes prediction
+                latency, throughput and request success rate.
+            </p>
+        </section>
+
+        <footer>
+            ML Model Latency and Throughput Benchmarking Project
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
